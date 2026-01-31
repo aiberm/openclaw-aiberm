@@ -1,0 +1,16 @@
+{
+  "id": "openclaw-aiberm",
+  "providers": [
+    "aiberm-openai",
+    "aiberm-anthropic",
+    "aiberm-google",
+    "aiberm-deepseek",
+    "aiberm-xai",
+    "aiberm-other"
+  ],
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}

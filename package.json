@@ -1,0 +1,39 @@
+{
+  "name": "openclaw-aiberm",
+  "version": "0.2.0",
+  "type": "module",
+  "description": "Aiberm provider plugin for OpenClaw - Access GPT, Claude, Gemini, DeepSeek, Grok and more models via Aiberm API with dynamic model loading",
+  "author": "Aiberm",
+  "license": "MIT",
+  "keywords": [
+    "openclaw",
+    "openclaw-plugin",
+    "aiberm",
+    "openai",
+    "anthropic",
+    "claude",
+    "gemini",
+    "gpt",
+    "deepseek",
+    "grok"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aiberm/openclaw-aiberm"
+  },
+  "homepage": "https://aiberm.com",
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ]
+  },
+  "files": [
+    "index.ts",
+    "src",
+    "openclaw.plugin.json",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "openclaw": ">=2026.1.0"
+  }
+}
