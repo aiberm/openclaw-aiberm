@@ -1,42 +1,50 @@
 # openclaw-aiberm
 
-Aiberm provider plugin for [OpenClaw](https://github.com/openclaw/openclaw).
+[English](./README_EN.md) | 中文
 
-Access GPT, Claude, Gemini, DeepSeek, Grok and more models through Aiberm API with a single API key.
+Aiberm 的 [OpenClaw](https://github.com/openclaw/openclaw) 插件。
 
-**Dynamic Model Loading**: This plugin automatically fetches the latest available models from Aiberm API, so you always have access to the newest models without updating the plugin.
+通过 Aiberm API，使用一个 API Key 即可访问 GPT、Claude、Gemini、DeepSeek、Grok 等多种模型。
 
-## Installation
+**动态模型加载**：插件会自动从 Aiberm API 获取最新的模型列表，无需更新插件即可使用最新模型。
+
+## 安装
 
 ```bash
 openclaw plugins install openclaw-aiberm
 ```
 
-Or install via npm:
+或通过 npm 安装：
 
 ```bash
 npm install openclaw-aiberm
 ```
 
-Then enable the plugin:
+启用插件：
 
 ```bash
 openclaw plugins enable openclaw-aiberm
 ```
 
-## Authentication
+**重要**：启用后需要重启 gateway 才能生效：
 
-After installing the plugin, authenticate with your Aiberm API key:
+```bash
+openclaw gateway restart
+```
+
+## 认证
+
+安装并启用插件后，使用 Aiberm API Key 进行认证：
 
 ```bash
 openclaw models auth login --provider aiberm --set-default
 ```
 
-You will be prompted to enter your Aiberm API key. Get your API key at [https://aiberm.com/console/token](https://aiberm.com/console/token).
+系统会提示你输入 Aiberm API Key。在 [https://aiberm.com/console/token](https://aiberm.com/console/token) 获取你的 API Key。
 
-## Example Models
+## 可用模型
 
-Models are loaded dynamically from the API. Here are some examples:
+模型从 API 动态加载，以下是一些示例：
 
 ### OpenAI GPT
 - `aiberm/openai/gpt-5.2-codex`
@@ -64,58 +72,58 @@ Models are loaded dynamically from the API. Here are some examples:
 - `aiberm/x-ai/grok-4.1-fast`
 - `aiberm/x-ai/grok-code-fast-1`
 
-Visit [Aiberm Pricing](https://aiberm.com/pricing) for the complete and up-to-date list of available models.
+访问 [Aiberm 价格页面](https://aiberm.com/pricing) 查看完整的模型列表。
 
-## Usage
+## 使用方法
 
 ```bash
-# Use Claude Sonnet 4.5 (default after auth)
-openclaw agent --message "Hello"
+# 使用 Claude Sonnet 4.5（认证后的默认模型）
+openclaw agent --message "你好"
 
-# Use a specific model
-openclaw agent --model aiberm/openai/gpt-5.2-codex --message "Hello"
+# 使用指定模型
+openclaw agent --model aiberm/openai/gpt-5.2-codex --message "你好"
 
-# Use DeepSeek R1
-openclaw agent --model aiberm/deepseek/deepseek-r1 --message "Hello"
+# 使用 DeepSeek R1
+openclaw agent --model aiberm/deepseek/deepseek-r1 --message "你好"
 
-# List available models
+# 列出可用模型
 openclaw models list | grep aiberm
 ```
 
-## Environment Variable
+## 环境变量
 
-You can also set the API key via environment variable:
+也可以通过环境变量设置 API Key：
 
 ```bash
 export AIBERM_API_KEY=sk-your-api-key
 ```
 
-## How Dynamic Loading Works
+## 动态加载原理
 
-1. When the plugin loads, it fetches the latest model list from `https://aiberm.com/api/pricing`
-2. If the API is unavailable, the plugin falls back to a built-in model list
-3. During authentication, the latest models are fetched again to ensure you have the most up-to-date list
+1. 插件加载时，从 `https://aiberm.com/api/pricing` 获取最新模型列表
+2. 如果 API 不可用，插件会使用内置的模型列表
+3. 认证时会再次获取最新模型，确保模型列表是最新的
 
-This means:
-- New models are available immediately without plugin updates
-- Deprecated models are automatically removed
-- Model capabilities are always current
+这意味着：
+- 新模型上线后无需更新插件即可使用
+- 下线的模型会自动移除
+- 模型信息始终保持最新
 
-## Why Aiberm?
+## 为什么选择 Aiberm？
 
-- **Unified API**: Access multiple AI providers (OpenAI, Anthropic, Google, DeepSeek, X.AI, and more) with a single API key
-- **Always Up-to-date**: Dynamic model loading ensures you always have access to the latest models
-- **Cost-effective**: Competitive pricing for all models
-- **Reliable**: High availability and fast response times
-- **Easy setup**: Simple authentication flow
+- **统一 API**：一个 API Key 访问多个 AI 提供商（OpenAI、Anthropic、Google、DeepSeek、X.AI 等）
+- **始终最新**：动态模型加载确保你始终可以使用最新模型
+- **价格优惠**：所有模型均有竞争力的价格
+- **稳定可靠**：高可用性和快速响应
+- **简单易用**：简单的认证流程
 
-## Links
+## 相关链接
 
-- [Aiberm Website](https://aiberm.com)
-- [Aiberm Documentation](https://docs.aiberm.com)
-- [Get API Key](https://aiberm.com/console/token)
-- [Pricing](https://aiberm.com/pricing)
+- [Aiberm 官网](https://aiberm.com)
+- [Aiberm 文档](https://docs.aiberm.com)
+- [获取 API Key](https://aiberm.com/console/token)
+- [价格](https://aiberm.com/pricing)
 
-## License
+## 许可证
 
 MIT
