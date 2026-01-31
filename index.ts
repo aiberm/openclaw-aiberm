@@ -3,19 +3,12 @@ import {
   PLUGIN_ID,
   PLUGIN_NAME,
   PLUGIN_DESCRIPTION,
-  PROVIDER_ID_OPENAI,
-  PROVIDER_ID_ANTHROPIC,
-  PROVIDER_ID_GOOGLE,
-  PROVIDER_ID_DEEPSEEK,
-  PROVIDER_ID_XAI,
-  PROVIDER_ID_OTHER,
+  PROVIDER_ID,
   AIBERM_BASE_URL,
   AIBERM_API_KEY_ENV,
-  API_TYPE_MAPPING,
 } from "./src/constants.js";
 import {
   fetchModelsFromAPI,
-  groupModelsByProvider,
   getFallbackModels,
 } from "./src/models.js";
 import { createAibermAuthMethod } from "./src/auth.js";
@@ -64,33 +57,18 @@ const aibermPlugin = {
       api.logger?.info(`Using ${allModels.length} fallback models`);
     }
 
-    const groupedModels = groupModelsByProvider(allModels);
-
-    const providerConfigs = [
-      { id: PROVIDER_ID_OPENAI, label: "Aiberm OpenAI" },
-      { id: PROVIDER_ID_ANTHROPIC, label: "Aiberm Anthropic" },
-      { id: PROVIDER_ID_GOOGLE, label: "Aiberm Google" },
-      { id: PROVIDER_ID_DEEPSEEK, label: "Aiberm DeepSeek" },
-      { id: PROVIDER_ID_XAI, label: "Aiberm X.AI" },
-      { id: PROVIDER_ID_OTHER, label: "Aiberm Other" },
-    ];
-
-    for (const { id, label } of providerConfigs) {
-      const models = groupedModels[id] || [];
-      if (models.length > 0) {
-        api.registerProvider({
-          id,
-          label,
-          envVars: [AIBERM_API_KEY_ENV],
-          models: {
-            baseUrl: AIBERM_BASE_URL,
-            api: API_TYPE_MAPPING[id] || "openai-completions",
-            models,
-          },
-          auth: [authMethod],
-        });
-      }
-    }
+    // Register single unified provider
+    api.registerProvider({
+      id: PROVIDER_ID,
+      label: "Aiberm",
+      envVars: [AIBERM_API_KEY_ENV],
+      models: {
+        baseUrl: AIBERM_BASE_URL,
+        api: "openai-completions",
+        models: allModels,
+      },
+      auth: [authMethod],
+    });
   },
 };
 

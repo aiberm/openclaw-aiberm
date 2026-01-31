@@ -1,13 +1,4 @@
-import {
-  AIBERM_PRICING_API,
-  PROVIDER_MAPPING,
-  PROVIDER_ID_OPENAI,
-  PROVIDER_ID_ANTHROPIC,
-  PROVIDER_ID_GOOGLE,
-  PROVIDER_ID_DEEPSEEK,
-  PROVIDER_ID_XAI,
-  PROVIDER_ID_OTHER,
-} from "./constants.js";
+import { AIBERM_PRICING_API } from "./constants.js";
 
 const DEFAULT_COST = { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 };
 
@@ -38,17 +29,6 @@ export interface ParsedModel {
   cost: { input: number; output: number; cacheRead: number; cacheWrite: number };
   contextWindow: number;
   maxTokens: number;
-  providerId: string;
-}
-
-// Determine provider ID from model name
-function getProviderId(modelName: string): string {
-  for (const [prefix, providerId] of Object.entries(PROVIDER_MAPPING)) {
-    if (modelName.startsWith(prefix)) {
-      return providerId;
-    }
-  }
-  return PROVIDER_ID_OTHER;
 }
 
 // Generate display name from model ID
@@ -157,30 +137,7 @@ function parseModels(data: AibermModel[]): ParsedModel[] {
       cost: DEFAULT_COST,
       contextWindow: getContextWindow(model.model_name),
       maxTokens: getMaxTokens(model.model_name),
-      providerId: getProviderId(model.model_name),
     }));
-}
-
-// Group models by provider
-export function groupModelsByProvider(models: ParsedModel[]): Record<string, ParsedModel[]> {
-  const grouped: Record<string, ParsedModel[]> = {
-    [PROVIDER_ID_OPENAI]: [],
-    [PROVIDER_ID_ANTHROPIC]: [],
-    [PROVIDER_ID_GOOGLE]: [],
-    [PROVIDER_ID_DEEPSEEK]: [],
-    [PROVIDER_ID_XAI]: [],
-    [PROVIDER_ID_OTHER]: [],
-  };
-
-  for (const model of models) {
-    if (grouped[model.providerId]) {
-      grouped[model.providerId].push(model);
-    } else {
-      grouped[PROVIDER_ID_OTHER].push(model);
-    }
-  }
-
-  return grouped;
 }
 
 // Fetch models from Aiberm API
