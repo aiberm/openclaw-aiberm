@@ -7,10 +7,7 @@ import {
   AIBERM_BASE_URL,
   AIBERM_API_KEY_ENV,
 } from "./src/constants.js";
-import {
-  fetchModelsFromAPI,
-  getFallbackModels,
-} from "./src/models.js";
+import { getFallbackModels } from "./src/models.js";
 import { createAibermAuthMethod } from "./src/auth.js";
 
 const aibermPlugin = {
@@ -18,7 +15,7 @@ const aibermPlugin = {
   name: PLUGIN_NAME,
   description: PLUGIN_DESCRIPTION,
   configSchema: emptyPluginConfigSchema(),
-  async register(api: {
+  register(api: {
     registerProvider: (provider: {
       id: string;
       label: string;
@@ -38,24 +35,12 @@ const aibermPlugin = {
       };
       auth: Array<ReturnType<typeof createAibermAuthMethod>>;
     }) => void;
-    logger?: {
-      info: (msg: string) => void;
-      error: (msg: string) => void;
-    };
   }) {
     const authMethod = createAibermAuthMethod();
 
-    // Try to fetch models from API, fallback to static list
-    let allModels;
-    try {
-      api.logger?.info("Fetching models from Aiberm API...");
-      allModels = await fetchModelsFromAPI();
-      api.logger?.info(`Loaded ${allModels.length} models from Aiberm API`);
-    } catch (error) {
-      api.logger?.error(`Failed to fetch models from API: ${error}`);
-      allModels = getFallbackModels();
-      api.logger?.info(`Using ${allModels.length} fallback models`);
-    }
+    // Use fallback models for initial registration
+    // Dynamic models will be fetched during authentication
+    const fallbackModels = getFallbackModels();
 
     // Register single unified provider
     api.registerProvider({
@@ -65,7 +50,7 @@ const aibermPlugin = {
       models: {
         baseUrl: AIBERM_BASE_URL,
         api: "openai-completions",
-        models: allModels,
+        models: fallbackModels,
       },
       auth: [authMethod],
     });
