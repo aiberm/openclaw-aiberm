@@ -42,6 +42,8 @@ openclaw models auth login --provider aiberm --set-default
 
 系统会提示你输入 Aiberm API Key。在 [https://aiberm.com/console/token](https://aiberm.com/console/token) 获取你的 API Key。
 
+如果需要更换成其他模型，可以重新运行一下 `openclaw onboard`，在 Model/auth provider 中选择 **Skip for now**，在 Filter models by provider 中选择 **aiberm**，然后在模型列表中选择你想切换的模型。
+
 ## 可用模型
 
 模型从 API 动态加载，以下是一些示例：

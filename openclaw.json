@@ -1,0 +1,1092 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.1.29",
+    "lastTouchedAt": "2026-02-10T03:02:48.276Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-02-10T03:02:48.268Z",
+    "lastRunVersion": "2026.1.29",
+    "lastRunCommand": "onboard",
+    "lastRunMode": "local"
+  },
+  "auth": {
+    "profiles": {
+      "aiberm:default": {
+        "provider": "aiberm",
+        "mode": "api_key"
+      }
+    }
+  },
+  "models": {
+    "providers": {
+      "aiberm": {
+        "baseUrl": "https://aiberm.com/v1",
+        "apiKey": "sk-TVoo384Rr78TODcPJC0qzoQtWFZ2FmHqrGNN4mgnHAGLbGBp",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "openai/gpt-4.1-mini",
+            "name": "GPT 4.1 Mini",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 1000000,
+            "maxTokens": 32768
+          },
+          {
+            "id": "openai/gpt-5.2",
+            "name": "GPT 5.2",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 400000,
+            "maxTokens": 128000
+          },
+          {
+            "id": "xiaomi/mimo-v2-flash",
+            "name": "Mimo V2 Flash",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 32768
+          },
+          {
+            "id": "openai/gpt-5-nano",
+            "name": "GPT 5 Nano",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 400000,
+            "maxTokens": 128000
+          },
+          {
+            "id": "deepseek/deepseek-r1",
+            "name": "DeepSeek R1",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 32768
+          },
+          {
+            "id": "openai/gpt-5.1-codex",
+            "name": "GPT 5.1 Codex",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 400000,
+            "maxTokens": 128000
+          },
+          {
+            "id": "openai/gpt-5",
+            "name": "GPT 5",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 400000,
+            "maxTokens": 128000
+          },
+          {
+            "id": "kimi-k2.5-thinking",
+            "name": "Kimi K2.5 (Thinking)",
+            "reasoning": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 32768
+          },
+          {
+            "id": "deepseek/deepseek-v3.2-exp",
+            "name": "DeepSeek V3.2 Exp",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 32768
+          },
+          {
+            "id": "openai/gpt-4o-mini",
+            "name": "GPT 4o Mini",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 16384
+          },
+          {
+            "id": "openai/gpt-4.1",
+            "name": "GPT 4.1",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 1000000,
+            "maxTokens": 32768
+          },
+          {
+            "id": "x-ai/grok-code-fast-1",
+            "name": "Grok Code Fast 1",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 32768
+          },
+          {
+            "id": "anthropic/claude-haiku-4.5:thinking",
+            "name": "Claude Haiku 4.5 (Thinking)",
+            "reasoning": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 64000
+          },
+          {
+            "id": "openai/gpt-4o",
+            "name": "GPT 4o",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 16384
+          },
+          {
+            "id": "claude-opus-4-5-20251101-thinking",
+            "name": "Claude Opus 4 5 20251101 (Thinking)",
+            "reasoning": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 64000
+          },
+          {
+            "id": "google/gemini-2.5-pro",
+            "name": "Gemini 2.5 Pro",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 1048576,
+            "maxTokens": 65536
+          },
+          {
+            "id": "gemini-3-flash-preview",
+            "name": "Gemini 3 Flash Preview",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 1048576,
+            "maxTokens": 65536
+          },
+          {
+            "id": "openai/text-embedding-3-small",
+            "name": "Text Embedding 3 Small",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 32768
+          },
+          {
+            "id": "claude-sonnet-4-5-20250929-thinking",
+            "name": "Claude Sonnet 4 5 20250929 (Thinking)",
+            "reasoning": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 64000
+          },
+          {
+            "id": "openai/gpt-5.3-codex",
+            "name": "GPT 5.3 Codex",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 400000,
+            "maxTokens": 128000
+          },
+          {
+            "id": "openai/text-embedding-ada-002",
+            "name": "Text Embedding Ada 002",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 32768
+          },
+          {
+            "id": "openai/text-embedding-3-large",
+            "name": "Text Embedding 3 Large",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 32768
+          },
+          {
+            "id": "claude-haiku-4-5-20251001-thinking",
+            "name": "Claude Haiku 4 5 20251001 (Thinking)",
+            "reasoning": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 64000
+          },
+          {
+            "id": "anthropic/claude-sonnet-4.5:thinking",
+            "name": "Claude Sonnet 4.5 (Thinking)",
+            "reasoning": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 64000
+          },
+          {
+            "id": "claude-haiku-4-5-20251001",
+            "name": "Claude Haiku 4 5 20251001",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 64000
+          },
+          {
+            "id": "x-ai/grok-4.1-fast",
+            "name": "Grok 4.1 Fast",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 32768
+          },
+          {
+            "id": "claude-opus-4-6",
+            "name": "Claude Opus 4 6",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 64000
+          },
+          {
+            "id": "openai/gpt-5.2-codex",
+            "name": "GPT 5.2 Codex",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 400000,
+            "maxTokens": 128000
+          },
+          {
+            "id": "google/gemini-3-flash",
+            "name": "Gemini 3 Flash",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 1048576,
+            "maxTokens": 65536
+          },
+          {
+            "id": "minimax/minimax-m2.1",
+            "name": "Minimax M2.1",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 32768
+          },
+          {
+            "id": "openai/gpt-5.2-chat",
+            "name": "GPT 5.2 Chat",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 400000,
+            "maxTokens": 128000
+          },
+          {
+            "id": "deepseek/deepseek-v3.2-exp-thinking",
+            "name": "DeepSeek V3.2 Exp (Thinking)",
+            "reasoning": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 32768
+          },
+          {
+            "id": "anthropic/claude-opus-4.6",
+            "name": "Claude Opus 4.6",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 64000
+          },
+          {
+            "id": "gpt-5.2-chat",
+            "name": "GPT 5.2 Chat",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 400000,
+            "maxTokens": 128000
+          },
+          {
+            "id": "anthropic/claude-opus-4.5:thinking",
+            "name": "Claude Opus 4.5 (Thinking)",
+            "reasoning": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 64000
+          },
+          {
+            "id": "anthropic/claude-opus-4.6:thinking",
+            "name": "Claude Opus 4.6 (Thinking)",
+            "reasoning": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 64000
+          },
+          {
+            "id": "gemini-3-pro-image-preview",
+            "name": "Gemini 3 Pro Image Preview",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 1048576,
+            "maxTokens": 65536
+          },
+          {
+            "id": "claude-sonnet-4-5-20250929",
+            "name": "Claude Sonnet 4 5 20250929",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 64000
+          },
+          {
+            "id": "gemini-3-pro-preview",
+            "name": "Gemini 3 Pro Preview",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 1048576,
+            "maxTokens": 65536
+          },
+          {
+            "id": "claude-opus-4-6-thinking",
+            "name": "Claude Opus 4 6 (Thinking)",
+            "reasoning": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 64000
+          },
+          {
+            "id": "anthropic/claude-sonnet-4.5",
+            "name": "Claude Sonnet 4.5",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 64000
+          },
+          {
+            "id": "claude-opus-4-5-20251101",
+            "name": "Claude Opus 4 5 20251101",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 64000
+          },
+          {
+            "id": "deepseek/deepseek-v3.2",
+            "name": "DeepSeek V3.2",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 32768
+          },
+          {
+            "id": "kimi-k2.5",
+            "name": "Kimi K2.5",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 32768
+          },
+          {
+            "id": "openai/gpt-5-codex",
+            "name": "GPT 5 Codex",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 400000,
+            "maxTokens": 128000
+          },
+          {
+            "id": "google/gemini-3-pro",
+            "name": "Gemini 3 Pro",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 1048576,
+            "maxTokens": 65536
+          },
+          {
+            "id": "google/gemini-3-pro-mcpmark",
+            "name": "Gemini 3 Pro Mcpmark",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 1048576,
+            "maxTokens": 65536
+          },
+          {
+            "id": "openai/gpt-5.1",
+            "name": "GPT 5.1",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 400000,
+            "maxTokens": 128000
+          },
+          {
+            "id": "anthropic/claude-opus-4.5",
+            "name": "Claude Opus 4.5",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 64000
+          },
+          {
+            "id": "openai/gpt-5-mini",
+            "name": "GPT 5 Mini",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 400000,
+            "maxTokens": 128000
+          },
+          {
+            "id": "anthropic/claude-haiku-4.5",
+            "name": "Claude Haiku 4.5",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 64000
+          },
+          {
+            "id": "openai/gpt-4.1-nano",
+            "name": "GPT 4.1 Nano",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 1000000,
+            "maxTokens": 32768
+          },
+          {
+            "id": "openai/gpt-5.1-codex-max",
+            "name": "GPT 5.1 Codex Max",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 400000,
+            "maxTokens": 128000
+          },
+          {
+            "id": "deepseek/deepseek-r1-0528",
+            "name": "DeepSeek R1 0528",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 32768
+          },
+          {
+            "id": "google/gemini-2.5-flash",
+            "name": "Gemini 2.5 Flash",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 1048576,
+            "maxTokens": 65536
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "aiberm/google/gemini-3-flash"
+      },
+      "models": {
+        "aiberm/anthropic/claude-haiku-4.5:thinking": {},
+        "aiberm/openai/gpt-image-1.5": {},
+        "aiberm/anthropic/claude-opus-4.5:thinking": {},
+        "aiberm/openai/gpt-4o": {},
+        "aiberm/anthropic/claude-sonnet-4.5": {},
+        "aiberm/claude-sonnet-4-5-20250929-thinking": {},
+        "aiberm/openai/gpt-4o-mini": {},
+        "aiberm/google/gemini-3-pro-mcpmark": {},
+        "aiberm/minimax/minimax-m2.1": {},
+        "aiberm/deepseek/deepseek-v3.2-exp": {},
+        "aiberm/google/gemini-2.5-pro": {},
+        "aiberm/openai/gpt-5.1": {},
+        "aiberm/openai/gpt-5.2-chat": {},
+        "aiberm/google/gemini-3-pro": {},
+        "aiberm/claude-sonnet-4-5-20250929": {},
+        "aiberm/claude-haiku-4-5-20251001": {},
+        "aiberm/openai/gpt-5.2-codex": {},
+        "aiberm/google/gemini-2.5-flash": {},
+        "aiberm/deepseek/deepseek-r1-0528": {},
+        "aiberm/openai/gpt-5.1-codex": {},
+        "aiberm/gpt-image-1.5": {},
+        "aiberm/deepseek/deepseek-v3.2": {},
+        "aiberm/deepseek/deepseek-r1": {},
+        "aiberm/openai/gpt-5.2": {},
+        "aiberm/openai/gpt-5-mini": {},
+        "aiberm/openai/gpt-4.1": {},
+        "aiberm/openai/gpt-5.1-codex-max": {},
+        "aiberm/gemini-3-pro-preview": {},
+        "aiberm/anthropic/claude-haiku-4.5": {},
+        "aiberm/x-ai/grok-code-fast-1": {},
+        "aiberm/openai/gpt-4.1-mini": {},
+        "aiberm/openai/gpt-5": {},
+        "aiberm/anthropic/claude-sonnet-4.5:thinking": {},
+        "aiberm/xiaomi/mimo-v2-flash": {},
+        "aiberm/x-ai/grok-4.1-fast": {},
+        "aiberm/openai/gpt-5-nano": {},
+        "aiberm/claude-opus-4-5-20251101-thinking": {},
+        "aiberm/claude-opus-4-5-20251101": {},
+        "aiberm/gemini-3-flash-preview": {},
+        "aiberm/google/gemini-3-flash": {},
+        "aiberm/openai/gpt-4.1-nano": {},
+        "aiberm/deepseek/deepseek-v3.2-exp-thinking": {},
+        "aiberm/openai/gpt-5-codex": {},
+        "aiberm/gemini-3-pro-image-preview": {},
+        "aiberm/claude-haiku-4-5-20251001-thinking": {},
+        "aiberm/anthropic/claude-opus-4.5": {},
+        "aiberm/kimi-k2.5": {},
+        "aiberm/openai/text-embedding-ada-002": {},
+        "aiberm/anthropic/claude-opus-4.6": {},
+        "aiberm/openai/text-embedding-3-large": {},
+        "aiberm/claude-opus-4-6": {},
+        "aiberm/claude-opus-4-6-thinking": {},
+        "aiberm/openai/gpt-5.3-codex": {},
+        "aiberm/gpt-5.2-chat": {},
+        "aiberm/kimi-k2.5-thinking": {},
+        "aiberm/openai/text-embedding-3-small": {},
+        "aiberm/anthropic/claude-opus-4.6:thinking": {}
+      },
+      "workspace": "/home/user/.openclaw/workspace",
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto"
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "botToken": "8451038747:AAGgvT_fwMFYI9ErRlYwJAsrqRtkcsOuL34",
+      "groupPolicy": "allowlist",
+      "streamMode": "partial"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {
+      "mode": "token",
+      "token": "bf946ef033bb61cda21532086b4c1d84dd4e8d7c312ea92f"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    }
+  },
+  "skills": {
+    "install": {
+      "nodeManager": "npm"
+    }
+  },
+  "plugins": {
+    "entries": {
+      "openclaw-aiberm": {
+        "enabled": true
+      },
+      "telegram": {
+        "enabled": true
+      }
+    },
+    "installs": {
+      "openclaw-aiberm": {
+        "source": "npm",
+        "spec": "openclaw-aiberm",
+        "installPath": "/home/user/.openclaw/extensions/openclaw-aiberm",
+        "version": "0.3.1",
+        "installedAt": "2026-01-31T11:13:42.974Z"
+      }
+    }
+  }
+}
