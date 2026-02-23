@@ -123,9 +123,13 @@ function getMaxTokens(modelName: string): number {
 function parseModels(data: AibermModel[]): ParsedModel[] {
   return data
     .filter((model) => {
+      // Filter out anthropic/ prefix models (expensive), use claude- prefix instead
+      if (model.model_name.startsWith("anthropic/")) {
+        return false;
+      }
       // Filter out image generation models for chat providers
       // They can still be used but through different endpoints
-      return model.supported_endpoint_types.some((t) => 
+      return model.supported_endpoint_types.some((t) =>
         ["openai", "anthropic", "gemini"].includes(t)
       );
     })
@@ -163,24 +167,36 @@ export async function fetchModelsFromAPI(): Promise<ParsedModel[]> {
 export function getFallbackModels(): ParsedModel[] {
   const fallbackData: AibermModel[] = [
     // OpenAI
-    { model_name: "openai/gpt-5.2-codex", quota_type: 0, model_ratio: 1.5, model_price: 0, owner_by: "", completion_ratio: 8, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
-    { model_name: "openai/gpt-5.2", quota_type: 0, model_ratio: 1.5, model_price: 0, owner_by: "", completion_ratio: 8, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    { model_name: "openai/gpt-5", quota_type: 0, model_ratio: 1, model_price: 0, owner_by: "", completion_ratio: 8, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    { model_name: "openai/gpt-5-mini", quota_type: 0, model_ratio: 0.15, model_price: 0, owner_by: "", completion_ratio: 8, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    { model_name: "openai/gpt-5-nano", quota_type: 0, model_ratio: 0.031, model_price: 0, owner_by: "", completion_ratio: 8, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    { model_name: "openai/gpt-5-codex", quota_type: 0, model_ratio: 0.6, model_price: 0, owner_by: "", completion_ratio: 8, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    { model_name: "openai/gpt-5.1-codex", quota_type: 0, model_ratio: 0.6, model_price: 0, owner_by: "", completion_ratio: 8, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    { model_name: "openai/gpt-5.2-codex", quota_type: 0, model_ratio: 0.6, model_price: 0, owner_by: "", completion_ratio: 8, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
     { model_name: "openai/gpt-4.1", quota_type: 0, model_ratio: 1.2, model_price: 0, owner_by: "", completion_ratio: 4, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    { model_name: "openai/gpt-4.1-mini", quota_type: 0, model_ratio: 0.13, model_price: 0, owner_by: "", completion_ratio: 4, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    { model_name: "openai/gpt-4.1-nano", quota_type: 0, model_ratio: 0.028, model_price: 0, owner_by: "", completion_ratio: 4, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
     { model_name: "openai/gpt-4o", quota_type: 0, model_ratio: 0.9, model_price: 0, owner_by: "", completion_ratio: 4, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
     { model_name: "openai/gpt-4o-mini", quota_type: 0, model_ratio: 0.05, model_price: 0, owner_by: "", completion_ratio: 4, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
-    // Anthropic
-    { model_name: "anthropic/claude-sonnet-4.5", quota_type: 0, model_ratio: 5.2, model_price: 0, owner_by: "", completion_ratio: 5, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
-    { model_name: "anthropic/claude-opus-4.5", quota_type: 0, model_ratio: 8, model_price: 0, owner_by: "", completion_ratio: 5, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
-    { model_name: "anthropic/claude-haiku-4.5", quota_type: 0, model_ratio: 0.875, model_price: 0, owner_by: "", completion_ratio: 5, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
+    { model_name: "openai/o3", quota_type: 0, model_ratio: 0.8, model_price: 0, owner_by: "", completion_ratio: 8, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    { model_name: "openai/o3-mini", quota_type: 0, model_ratio: 0.4, model_price: 0, owner_by: "", completion_ratio: 8, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    { model_name: "openai/o4-mini", quota_type: 0, model_ratio: 0.4, model_price: 0, owner_by: "", completion_ratio: 8, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    // Claude (cheaper than anthropic/ prefix)
+    { model_name: "claude-opus-4-6", quota_type: 0, model_ratio: 2.065, model_price: 0, owner_by: "", completion_ratio: 5, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
+    { model_name: "claude-sonnet-4-6", quota_type: 0, model_ratio: 1.239, model_price: 0, owner_by: "", completion_ratio: 5, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
+    { model_name: "claude-sonnet-4-6-thinking", quota_type: 0, model_ratio: 1.239, model_price: 0, owner_by: "", completion_ratio: 5, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
     // Google
     { model_name: "google/gemini-3-pro", quota_type: 0, model_ratio: 1, model_price: 0, owner_by: "", completion_ratio: 6, enable_groups: ["default"], supported_endpoint_types: ["gemini", "openai"] },
     { model_name: "google/gemini-3-flash", quota_type: 0, model_ratio: 0.18, model_price: 0, owner_by: "", completion_ratio: 8, enable_groups: ["default"], supported_endpoint_types: ["gemini", "openai"] },
     { model_name: "google/gemini-2.5-pro", quota_type: 0, model_ratio: 1, model_price: 0, owner_by: "", completion_ratio: 8, enable_groups: ["default"], supported_endpoint_types: ["gemini", "openai"] },
+    { model_name: "google/gemini-2.5-flash", quota_type: 0, model_ratio: 0.16, model_price: 0, owner_by: "", completion_ratio: 10, enable_groups: ["default"], supported_endpoint_types: ["gemini", "openai"] },
     // DeepSeek
     { model_name: "deepseek/deepseek-r1", quota_type: 0, model_ratio: 1.56, model_price: 0, owner_by: "", completion_ratio: 3.57, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
     { model_name: "deepseek/deepseek-v3.2", quota_type: 0, model_ratio: 0.45, model_price: 0, owner_by: "", completion_ratio: 1.5, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    { model_name: "deepseek/deepseek-v3.2-exp", quota_type: 0, model_ratio: 0.45, model_price: 0, owner_by: "", completion_ratio: 1.5, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
     // X.AI
     { model_name: "x-ai/grok-4.1-fast", quota_type: 0, model_ratio: 0.34, model_price: 0, owner_by: "", completion_ratio: 2.5, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    { model_name: "x-ai/grok-code-fast-1", quota_type: 0, model_ratio: 0.32, model_price: 0, owner_by: "", completion_ratio: 7.5, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
   ];
   return parseModels(fallbackData);
 }
