@@ -160,27 +160,85 @@ export async function fetchModelsFromAPI(): Promise<ParsedModel[]> {
 }
 
 // Fallback models in case API is unavailable
+// Last updated: 2026-04-02
 export function getFallbackModels(): ParsedModel[] {
   const fallbackData: AibermModel[] = [
-    // OpenAI
-    { model_name: "openai/gpt-5.2-codex", quota_type: 0, model_ratio: 1.5, model_price: 0, owner_by: "", completion_ratio: 8, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    // OpenAI GPT Models
+    { model_name: "openai/gpt-5.4", quota_type: 0, model_ratio: 1.5, model_price: 0, owner_by: "", completion_ratio: 8, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    { model_name: "openai/gpt-5.3-codex", quota_type: 0, model_ratio: 0.6, model_price: 0, owner_by: "", completion_ratio: 8, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
     { model_name: "openai/gpt-5.2", quota_type: 0, model_ratio: 1.5, model_price: 0, owner_by: "", completion_ratio: 8, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    { model_name: "openai/gpt-5.2-codex", quota_type: 0, model_ratio: 0.6, model_price: 0, owner_by: "", completion_ratio: 8, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    { model_name: "openai/gpt-5.1", quota_type: 0, model_ratio: 1, model_price: 0, owner_by: "", completion_ratio: 8, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    { model_name: "openai/gpt-5.1-codex", quota_type: 0, model_ratio: 0.6, model_price: 0, owner_by: "", completion_ratio: 8, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    { model_name: "openai/gpt-5", quota_type: 0, model_ratio: 1, model_price: 0, owner_by: "", completion_ratio: 8, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    { model_name: "openai/gpt-5-codex", quota_type: 0, model_ratio: 0.6, model_price: 0, owner_by: "", completion_ratio: 8, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    { model_name: "openai/gpt-5-mini", quota_type: 0, model_ratio: 0.15, model_price: 0, owner_by: "", completion_ratio: 8, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    { model_name: "openai/gpt-5-nano", quota_type: 0, model_ratio: 0.031, model_price: 0, owner_by: "", completion_ratio: 8, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
     { model_name: "openai/gpt-4.1", quota_type: 0, model_ratio: 1.2, model_price: 0, owner_by: "", completion_ratio: 4, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    { model_name: "openai/gpt-4.1-mini", quota_type: 0, model_ratio: 0.075, model_price: 0, owner_by: "", completion_ratio: 4, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    { model_name: "openai/gpt-4.1-nano", quota_type: 0, model_ratio: 0.028, model_price: 0, owner_by: "", completion_ratio: 4, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
     { model_name: "openai/gpt-4o", quota_type: 0, model_ratio: 0.9, model_price: 0, owner_by: "", completion_ratio: 4, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
-    { model_name: "openai/gpt-4o-mini", quota_type: 0, model_ratio: 0.05, model_price: 0, owner_by: "", completion_ratio: 4, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
-    // Anthropic
-    { model_name: "anthropic/claude-sonnet-4.5", quota_type: 0, model_ratio: 5.2, model_price: 0, owner_by: "", completion_ratio: 5, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
-    { model_name: "anthropic/claude-opus-4.5", quota_type: 0, model_ratio: 8, model_price: 0, owner_by: "", completion_ratio: 5, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
+    { model_name: "openai/gpt-4o-mini", quota_type: 0, model_ratio: 0.075, model_price: 0, owner_by: "", completion_ratio: 4, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    { model_name: "openai/o3-mini", quota_type: 0, model_ratio: 0.55, model_price: 0, owner_by: "", completion_ratio: 4, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+
+    // Anthropic Claude Models
+    { model_name: "anthropic/claude-opus", quota_type: 0, model_ratio: 3.19, model_price: 0, owner_by: "", completion_ratio: 5, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
+    { model_name: "anthropic/claude-opus-4.6", quota_type: 0, model_ratio: 2.065, model_price: 0, owner_by: "", completion_ratio: 5, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
+    { model_name: "anthropic/claude-opus-4.6:thinking", quota_type: 0, model_ratio: 2.065, model_price: 0, owner_by: "", completion_ratio: 5, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
+    { model_name: "anthropic/claude-opus-4.5", quota_type: 0, model_ratio: 2.065, model_price: 0, owner_by: "", completion_ratio: 5, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
+    { model_name: "anthropic/claude-opus-4.5:thinking", quota_type: 0, model_ratio: 2.065, model_price: 0, owner_by: "", completion_ratio: 5, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
+    { model_name: "anthropic/claude-sonnet", quota_type: 0, model_ratio: 1.917, model_price: 0, owner_by: "", completion_ratio: 5, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
+    { model_name: "anthropic/claude-sonnet-4.6", quota_type: 0, model_ratio: 1.239, model_price: 0, owner_by: "", completion_ratio: 5, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
+    { model_name: "anthropic/claude-sonnet-4.6:thinking", quota_type: 0, model_ratio: 1.239, model_price: 0, owner_by: "", completion_ratio: 5, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
+    { model_name: "anthropic/claude-sonnet-4.5", quota_type: 0, model_ratio: 1.239, model_price: 0, owner_by: "", completion_ratio: 5, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
+    { model_name: "anthropic/claude-sonnet-4.5:thinking", quota_type: 0, model_ratio: 5.2, model_price: 0, owner_by: "", completion_ratio: 5, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
+    { model_name: "anthropic/claude-haiku", quota_type: 0, model_ratio: 0.875, model_price: 0, owner_by: "", completion_ratio: 5, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
     { model_name: "anthropic/claude-haiku-4.5", quota_type: 0, model_ratio: 0.875, model_price: 0, owner_by: "", completion_ratio: 5, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
-    // Google
+    { model_name: "anthropic/claude-haiku-4.5:thinking", quota_type: 0, model_ratio: 0.875, model_price: 0, owner_by: "", completion_ratio: 5, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
+    { model_name: "claude-opus-4-6", quota_type: 0, model_ratio: 2.065, model_price: 0, owner_by: "", completion_ratio: 5, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
+    { model_name: "claude-opus-4-6-thinking", quota_type: 0, model_ratio: 2.065, model_price: 0, owner_by: "", completion_ratio: 5, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
+    { model_name: "claude-opus-4-5-20251101", quota_type: 0, model_ratio: 2.065, model_price: 0, owner_by: "", completion_ratio: 5, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
+    { model_name: "claude-opus-4-5-20251101-thinking", quota_type: 0, model_ratio: 2.065, model_price: 0, owner_by: "", completion_ratio: 5, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
+    { model_name: "claude-sonnet-4-6", quota_type: 0, model_ratio: 1.239, model_price: 0, owner_by: "", completion_ratio: 5, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
+    { model_name: "claude-sonnet-4-6-thinking", quota_type: 0, model_ratio: 1.239, model_price: 0, owner_by: "", completion_ratio: 5, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
+    { model_name: "claude-sonnet-4-5-20250929", quota_type: 0, model_ratio: 1.239, model_price: 0, owner_by: "", completion_ratio: 5, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
+    { model_name: "claude-sonnet-4-5-20250929-thinking", quota_type: 0, model_ratio: 1.239, model_price: 0, owner_by: "", completion_ratio: 5, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
+    { model_name: "claude-haiku-4-5-20251001", quota_type: 0, model_ratio: 0.875, model_price: 0, owner_by: "", completion_ratio: 5, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
+    { model_name: "claude-haiku-4-5-20251001-thinking", quota_type: 0, model_ratio: 0.875, model_price: 0, owner_by: "", completion_ratio: 5, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
+
+    // Google Gemini Models
     { model_name: "google/gemini-3-pro", quota_type: 0, model_ratio: 1, model_price: 0, owner_by: "", completion_ratio: 6, enable_groups: ["default"], supported_endpoint_types: ["gemini", "openai"] },
     { model_name: "google/gemini-3-flash", quota_type: 0, model_ratio: 0.18, model_price: 0, owner_by: "", completion_ratio: 8, enable_groups: ["default"], supported_endpoint_types: ["gemini", "openai"] },
     { model_name: "google/gemini-2.5-pro", quota_type: 0, model_ratio: 1, model_price: 0, owner_by: "", completion_ratio: 8, enable_groups: ["default"], supported_endpoint_types: ["gemini", "openai"] },
-    // DeepSeek
+    { model_name: "google/gemini-2.5-flash", quota_type: 0, model_ratio: 0.18, model_price: 0, owner_by: "", completion_ratio: 8, enable_groups: ["default"], supported_endpoint_types: ["gemini", "openai"] },
+    { model_name: "gemini-3-pro-preview", quota_type: 0, model_ratio: 1, model_price: 0, owner_by: "", completion_ratio: 6, enable_groups: ["default"], supported_endpoint_types: ["gemini", "openai"] },
+    { model_name: "gemini-3.1-pro-preview-thinking", quota_type: 0, model_ratio: 1, model_price: 0, owner_by: "", completion_ratio: 6, enable_groups: ["default"], supported_endpoint_types: ["gemini", "openai"] },
+    { model_name: "gemini-3-flash-preview", quota_type: 0, model_ratio: 0.18, model_price: 0, owner_by: "", completion_ratio: 8, enable_groups: ["default"], supported_endpoint_types: ["gemini", "openai"] },
+
+    // DeepSeek Models
     { model_name: "deepseek/deepseek-r1", quota_type: 0, model_ratio: 1.56, model_price: 0, owner_by: "", completion_ratio: 3.57, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    { model_name: "deepseek/deepseek-r1-0528", quota_type: 0, model_ratio: 1.56, model_price: 0, owner_by: "", completion_ratio: 3.57, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
     { model_name: "deepseek/deepseek-v3.2", quota_type: 0, model_ratio: 0.45, model_price: 0, owner_by: "", completion_ratio: 1.5, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
-    // X.AI
+    { model_name: "deepseek/deepseek-v3.2-exp", quota_type: 0, model_ratio: 0.45, model_price: 0, owner_by: "", completion_ratio: 1.5, enable_groups: ["default"], supported_endpoint_types: ["openai", "anthropic"] },
+    { model_name: "deepseek/deepseek-v3.2-exp-thinking", quota_type: 0, model_ratio: 0.45, model_price: 0, owner_by: "", completion_ratio: 1.5, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    { model_name: "deepseek-ocr", quota_type: 0, model_ratio: 0.86, model_price: 0, owner_by: "", completion_ratio: 4.77, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
+
+    // X.AI Grok Models
     { model_name: "x-ai/grok-4.1-fast", quota_type: 0, model_ratio: 0.34, model_price: 0, owner_by: "", completion_ratio: 2.5, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    { model_name: "x-ai/grok-code-fast-1", quota_type: 0, model_ratio: 0.34, model_price: 0, owner_by: "", completion_ratio: 2.5, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+
+    // Other Models
+    { model_name: "minimax/minimax-m2.5", quota_type: 0, model_ratio: 0.5555, model_price: 0, owner_by: "", completion_ratio: 4.148, enable_groups: ["default"], supported_endpoint_types: ["openai", "anthropic"] },
+    { model_name: "minimax/minimax-m2.1", quota_type: 0, model_ratio: 0.5555, model_price: 0, owner_by: "", completion_ratio: 4.148, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    { model_name: "xiaomi/mimo-v2-flash", quota_type: 0, model_ratio: 0.21, model_price: 0, owner_by: "", completion_ratio: 3, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    { model_name: "glm-5", quota_type: 0, model_ratio: 1.224, model_price: 0, owner_by: "", completion_ratio: 4.25, enable_groups: ["default"], supported_endpoint_types: ["anthropic", "openai"] },
+    { model_name: "kimi-k2.5", quota_type: 0, model_ratio: 0.5, model_price: 0, owner_by: "", completion_ratio: 4, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    { model_name: "kimi-k2.5-thinking", quota_type: 0, model_ratio: 0.5, model_price: 0, owner_by: "", completion_ratio: 4, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+
+    // Embedding Models
+    { model_name: "openai/text-embedding-3-large", quota_type: 0, model_ratio: 0.065, model_price: 0, owner_by: "", completion_ratio: 1, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    { model_name: "openai/text-embedding-3-small", quota_type: 0, model_ratio: 0.01, model_price: 0, owner_by: "", completion_ratio: 1, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
+    { model_name: "openai/text-embedding-ada-002", quota_type: 0, model_ratio: 0.05, model_price: 0, owner_by: "", completion_ratio: 1, enable_groups: ["default"], supported_endpoint_types: ["openai"] },
   ];
   return parseModels(fallbackData);
 }

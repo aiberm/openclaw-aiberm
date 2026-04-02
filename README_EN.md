@@ -49,30 +49,49 @@ If you need to switch to a different model, you can re-run `openclaw onboard`, s
 Models are loaded dynamically from the API. Here are some examples:
 
 ### OpenAI GPT
-- `aiberm/openai/gpt-5.2-codex`
-- `aiberm/openai/gpt-5.2`
-- `aiberm/openai/gpt-4.1`
-- `aiberm/openai/gpt-4o`
-- `aiberm/openai/gpt-4o-mini`
+- `aiberm/openai/gpt-5.4` - Latest GPT-5.4 model
+- `aiberm/openai/gpt-5.3-codex` - GPT-5.3 code-optimized
+- `aiberm/openai/gpt-5.2` / `gpt-5.2-codex`
+- `aiberm/openai/gpt-5.1` / `gpt-5.1-codex`
+- `aiberm/openai/gpt-5` / `gpt-5-codex`
+- `aiberm/openai/gpt-5-mini` / `gpt-5-nano`
+- `aiberm/openai/gpt-4.1` / `gpt-4.1-mini` / `gpt-4.1-nano`
+- `aiberm/openai/gpt-4o` / `gpt-4o-mini`
+- `aiberm/openai/o3-mini` - Reasoning-optimized model
 
 ### Anthropic Claude
-- `aiberm/anthropic/claude-opus-4.5`
-- `aiberm/anthropic/claude-sonnet-4.5`
-- `aiberm/anthropic/claude-haiku-4.5`
-- `aiberm/anthropic/claude-sonnet-4.5:thinking`
+- `aiberm/anthropic/claude-opus-4.6` / `claude-opus-4.6:thinking`
+- `aiberm/anthropic/claude-opus-4.5` / `claude-opus-4.5:thinking`
+- `aiberm/anthropic/claude-sonnet-4.6` / `claude-sonnet-4.6:thinking`
+- `aiberm/anthropic/claude-sonnet-4.5` / `claude-sonnet-4.5:thinking`
+- `aiberm/anthropic/claude-haiku` / `claude-haiku-4.5` / `claude-haiku-4.5:thinking`
 
 ### Google Gemini
-- `aiberm/google/gemini-3-pro`
-- `aiberm/google/gemini-3-flash`
-- `aiberm/google/gemini-2.5-pro`
+- `aiberm/google/gemini-3-pro` - Gemini 3 Pro
+- `aiberm/google/gemini-3-flash` - Gemini 3 Flash
+- `aiberm/google/gemini-2.5-pro` / `gemini-2.5-flash`
+- `aiberm/gemini-3.1-pro-preview-thinking`
 
 ### DeepSeek
-- `aiberm/deepseek/deepseek-r1`
-- `aiberm/deepseek/deepseek-v3.2`
+- `aiberm/deepseek/deepseek-r1` - DeepSeek R1 reasoning model
+- `aiberm/deepseek/deepseek-v3.2` / `deepseek-v3.2-exp`
+- `aiberm/deepseek/deepseek-v3.2-exp-thinking` - Chain-of-thought mode
+- `aiberm/deepseek-ocr` - OCR-specialized model
 
 ### X.AI Grok
-- `aiberm/x-ai/grok-4.1-fast`
-- `aiberm/x-ai/grok-code-fast-1`
+- `aiberm/x-ai/grok-4.1-fast` - Grok 4.1 fast version
+- `aiberm/x-ai/grok-code-fast-1` - Code-optimized version
+
+### Other Models
+- `aiberm/minimax/minimax-m2.5` - MiniMax M2.5
+- `aiberm/xiaomi/mimo-v2-flash` - Xiaomi Mimo V2
+- `aiberm/glm-5` - Zhipu GLM-5
+- `aiberm/kimi-k2.5` / `kimi-k2.5-thinking` - Kimi K2.5
+
+### Embedding Models
+- `aiberm/openai/text-embedding-3-large`
+- `aiberm/openai/text-embedding-3-small`
+- `aiberm/openai/text-embedding-ada-002`
 
 Visit [Aiberm Pricing](https://aiberm.com/pricing) for the complete and up-to-date list of available models.
 
