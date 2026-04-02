@@ -1,6 +1,6 @@
 {
   "name": "openclaw-aiberm",
-  "version": "0.3.3",
+  "version": "0.3.5",
   "type": "module",
   "description": "Aiberm provider plugin for OpenClaw - Access GPT, Claude, Gemini, DeepSeek, Grok and more models via Aiberm API with dynamic model loading",
   "author": "Aiberm",
@@ -35,6 +35,6 @@
     "README_EN.md"
   ],
   "peerDependencies": {
-    "openclaw": ">=2026.1.0"
+    "openclaw": ">=2026.4.0"
   }
 }
